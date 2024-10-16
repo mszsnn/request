@@ -1,0 +1,12 @@
+.vscode
+dist
+mock
+src
+scripts
+.gitlab-ci.yml
+.editorconfig
+.eslintrc
+.fatherrc.js
+.webpack.config.js
+.stylelintrc.json
+sensorsd.option.js

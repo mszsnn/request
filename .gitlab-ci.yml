@@ -1,0 +1,30 @@
+stages:
+  - build_npm_package
+  - publish_to_npm
+
+# 编译 npm 用包 (由 PR 和 打 tag 触发)
+build_npm_package:
+  stage: build_npm_package
+  only:
+    - tags
+    - merge_requests
+  script:
+    - /bin/bash ./scripts/build_npm_package.sh
+  artifacts:
+    expire_in: 7 day
+    name: "$CI_PROJECT_NAME-$CI_COMMIT_SHORT_SHA-lib"
+    paths:
+      - es/
+      - intl/
+
+# 人工确认发布到npm
+publish_to_npm:
+  stage: publish_to_npm
+  only:
+    - tags
+  when: manual
+  script:
+    - /bin/bash ./scripts/publish_to_npm.sh
+  dependencies:
+    - build_npm_package
+

@@ -1,0 +1,16 @@
+/node_modules
+/dist
+/lib
+/es
+.DS_Store
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+.idea/*
+/public/iconfont/iconfont.*
+/public/miniapp/tag-editor
+.fatherrc.js
+.webpack.config.js
+/intl
+/coverage

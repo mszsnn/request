@@ -1,0 +1,61 @@
+{
+  "name": "@sensorsd/request",
+  "version": "0.1.0",
+  "description": "sensorsd request",
+  "main": "es/index.js",
+  "types": "es/index.d.ts",
+  "scripts": {
+    "start": "echo \"Error: no debug for now\" && exit 1",
+    "build": "sef component build",
+    "test": "jest",
+    "lint": "eslint --ext .js src",
+    "reinstall": "rm -rf node_modules && rm -f package-lock.json && rm -f yarn.lock && yarn install"
+  },
+  "publishConfig": {
+    "registry": "http://npm.fe.sensorsdata.cn"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.sensorsdata.cn:SDG/components/request.git"
+  },
+  "keywords": [
+    "sensorsd"
+  ],
+  "author": "masong@sensorsdata.cn",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/runtime": "^7.10.4",
+    "crypto-js": "^3.3.0",
+    "jsencrypt": "^3.2.1",
+    "md5": "^2.3.0",
+    "uuid": "^8.3.2",
+    "whatwg-fetch": "^3.6.2"
+  },
+  "peerDependencies": {
+    "lodash": "^4.17.21",
+    "react": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "@sef/toolchain": "^0.1.0",
+    "@sensorsd/demo-hub": "^0.1.0",
+    "@testing-library/react-hooks": "^7.0.2",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^4.14.0",
+    "eslint-config-umi": "^0.1.1",
+    "eslint-loader": "^2.2.1",
+    "eslint-plugin-flowtype": "^2.34.1",
+    "eslint-plugin-import": "^2.6.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-typescript": "^0.14.0",
+    "husky": "^4.2.5",
+    "msw": "^0.39.2",
+    "sensors-jest": "^1.1.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  }
+}
